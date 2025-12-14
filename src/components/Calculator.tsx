@@ -19,10 +19,11 @@ interface CalculationResult {
 }
 
 const BASE_CHARGES: Record<string, number> = {
-    "1A/EC/2A": 240,
-    "3A/CC/3E": 200,
-    "SL": 180,
-    "2S": 120,
+    "1A/EC": 240,
+    "2A/FC": 200,
+    "3A/CC/3E": 180,
+    "SL": 120,
+    "2S": 60,
 };
 
 const Calculator = () => {
@@ -78,26 +79,26 @@ const Calculator = () => {
                     break;
                 case "48-12":
                     if (fare > 0) {
-                        const deduction = baseCharge + fare * 0.25;
+                        const deduction = Math.max(baseCharge, fare * 0.25);
                         cancellationCharge = Math.round(deduction);
                         refundAmount = Math.round(fare - deduction);
-                        explanation = `48-12 hours before departure - Base ₹${baseCharge} + 25% of fare deducted`;
+                        explanation = `48-12 hours before departure - 25% of fare deducted (Min ₹${baseCharge})`;
                     } else {
-                        cancellationCharge = `₹${baseCharge} + 25% of fare`;
+                        cancellationCharge = `25% (Min ₹${baseCharge})`;
                         refundAmount = "Enter fare to calculate";
-                        explanation = `48-12 hours before departure - Base charge + 25% of fare deducted`;
+                        explanation = `48-12 hours before departure - 25% of fare deducted (subject to min flat charge)`;
                     }
                     break;
                 case "12-4":
                     if (fare > 0) {
-                        const deduction = baseCharge + fare * 0.5;
+                        const deduction = Math.max(baseCharge, fare * 0.5);
                         cancellationCharge = Math.round(deduction);
                         refundAmount = Math.round(fare - deduction);
-                        explanation = `12-4 hours before departure - Base ₹${baseCharge} + 50% of fare deducted`;
+                        explanation = `12-4 hours before departure - 50% of fare deducted (Min ₹${baseCharge})`;
                     } else {
-                        cancellationCharge = `₹${baseCharge} + 50% of fare`;
+                        cancellationCharge = `50% (Min ₹${baseCharge})`;
                         refundAmount = "Enter fare to calculate";
-                        explanation = `12-4 hours before departure - Base charge + 50% of fare deducted`;
+                        explanation = `12-4 hours before departure - 50% of fare deducted (subject to min flat charge)`;
                     }
                     break;
                 case "<4":
@@ -160,8 +161,9 @@ const Calculator = () => {
                                         <SelectValue placeholder="Select class" />
                                     </SelectTrigger>
                                     <SelectContent className="bg-popover border-border">
-                                        <SelectItem value="1A/EC/2A">1A / EC / 2A (First AC / Executive)</SelectItem>
-                                        <SelectItem value="3A/CC/3E">3A / CC / 3E (Third AC / Chair Car)</SelectItem>
+                                        <SelectItem value="1A/EC">AC First / Executive (1A/EC)</SelectItem>
+                                        <SelectItem value="2A/FC">AC 2 Tier / First Class (2A/FC)</SelectItem>
+                                        <SelectItem value="3A/CC/3E">AC 3 Tier / Chair Car / 3E</SelectItem>
                                         <SelectItem value="SL">Sleeper (SL)</SelectItem>
                                         <SelectItem value="2S">Second Sitting (2S)</SelectItem>
                                     </SelectContent>

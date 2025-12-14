@@ -40,20 +40,24 @@ const Rules = () => {
                             <AccordionContent className="pb-5 text-muted-foreground">
                                 <div className="space-y-3 pl-12">
                                     <div className="flex justify-between items-center py-2 border-b border-border/50">
-                                        <span>1A / EC / 2A Class</span>
+                                        <span>AC First / Executive Class</span>
                                         <span className="font-semibold text-foreground">₹240</span>
                                     </div>
                                     <div className="flex justify-between items-center py-2 border-b border-border/50">
-                                        <span>3A / CC / 3E Class</span>
+                                        <span>AC 2 Tier / First Class</span>
                                         <span className="font-semibold text-foreground">₹200</span>
                                     </div>
                                     <div className="flex justify-between items-center py-2 border-b border-border/50">
-                                        <span>Sleeper (SL)</span>
+                                        <span>AC 3 Tier / AC Chair Car / AC 3 Economy</span>
                                         <span className="font-semibold text-foreground">₹180</span>
+                                    </div>
+                                    <div className="flex justify-between items-center py-2 border-b border-border/50">
+                                        <span>Sleeper Class</span>
+                                        <span className="font-semibold text-foreground">₹120</span>
                                     </div>
                                     <div className="flex justify-between items-center py-2">
                                         <span>Second Sitting (2S)</span>
-                                        <span className="font-semibold text-foreground">₹120</span>
+                                        <span className="font-semibold text-foreground">₹60</span>
                                     </div>
                                 </div>
                             </AccordionContent>
@@ -73,15 +77,15 @@ const Rules = () => {
                                 <div className="space-y-4 pl-12">
                                     <div className="p-3 rounded-lg bg-secondary/50">
                                         <p className="font-medium text-foreground mb-1">More than 48 hours</p>
-                                        <p className="text-sm">Only base cancellation charge deducted</p>
+                                        <p className="text-sm">Flat cancellation charge per passenger</p>
                                     </div>
                                     <div className="p-3 rounded-lg bg-secondary/50">
                                         <p className="font-medium text-foreground mb-1">48 to 12 hours</p>
-                                        <p className="text-sm">Base charge + 25% of fare deducted</p>
+                                        <p className="text-sm">25% of fare (subject to min flat charge)</p>
                                     </div>
                                     <div className="p-3 rounded-lg bg-secondary/50">
                                         <p className="font-medium text-foreground mb-1">12 to 4 hours</p>
-                                        <p className="text-sm">Base charge + 50% of fare deducted</p>
+                                        <p className="text-sm">50% of fare (subject to min flat charge)</p>
                                     </div>
                                     <div className="p-3 rounded-lg bg-destructive/10 border border-destructive/20">
                                         <p className="font-medium text-foreground mb-1">Less than 4 hours / After chart</p>
@@ -104,11 +108,11 @@ const Rules = () => {
                             <AccordionContent className="pb-5 text-muted-foreground">
                                 <div className="space-y-4 pl-12">
                                     <div className="p-3 rounded-lg bg-secondary/50">
-                                        <p className="font-medium text-foreground mb-1">Before Chart Preparation</p>
-                                        <p className="text-sm">Only clerkage charge of ₹60 per passenger deducted</p>
+                                        <p className="font-medium text-foreground mb-1">Before Chart & up to 30 min before departure</p>
+                                        <p className="text-sm">Refund after clerkage deduction (~₹60 per passenger)</p>
                                     </div>
                                     <div className="p-3 rounded-lg bg-secondary/50">
-                                        <p className="font-medium text-foreground mb-1">After Chart Preparation</p>
+                                        <p className="font-medium text-foreground mb-1">After 30 mins before departure</p>
                                         <p className="text-sm">Refund through TDR only, based on specific reason</p>
                                     </div>
                                     <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
