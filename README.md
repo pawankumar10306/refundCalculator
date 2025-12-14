@@ -1,73 +1,106 @@
-# React + TypeScript + Vite
+# IRCTC Refund Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, user-friendly web application to calculate cancellation charges and refund amounts for Indian Railway bookings. Built with React, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+![Refund Calculator](https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=1200&h=400)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- **Comprehensive Cancellation Support**: Calculate refunds for all train classes (1A/EC/2A, 3A/CC/3E, SL, 2S).
+- **Various Booking Statuses**: Handles Confirmed, RAC, and Waitlisted tickets.
+- **Timing Logic**: Accurate calculations based on cancellation timing:
+  - More than 48 hours before departure
+  - 48 to 12 hours before departure
+  - 12 to 4 hours before departure
+  - Less than 4 hours / After chart preparation
+- **Special Scenarios**:
+  - **Tatkal**: Calculations for confirmed and waitlisted Tatkal tickets.
+  - **Train Cancelled**: Logic for when the train is cancelled by railways (Full Refund).
+- **Instant Explanations**: Provides a clear explanation for how the refund/charge was calculated based on IRCTC rules.
+- **Responsive Design**: Fully responsive UI powered by Tailwind CSS and Shadcn UI components.
+- **Dark Mode Support**: Seamless integration with system theme preferences.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend Framework**: [React](https://reactjs.org/) (v18)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/) / [Shadcn UI](https://ui.shadcn.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **State Management**: React Hooks (`useState`)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js (v18 or higher)
+- npm (v9 or higher)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone <repository-url>
+    cd refundCalculator
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server**
+    ```bash
+    npm run dev
+    ```
+
+    The application will be available at `http://localhost:8080` (or similar port).
+
+### Building for Production
+
+To create a production-ready build:
+
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The output will be in the `dist/` directory.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Linting
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+To check for code quality issues:
+
+```bash
+npm run lint
 ```
+
+## 📐 Project Structure
+
+```
+src/
+├── components/         # React components
+│   ├── ui/             # Reusable UI components (buttons, inputs, etc.)
+│   ├── Calculator.tsx  # Main calculator logic and UI
+│   ├── Hero.tsx        # Landing page hero section
+│   └── ...
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+├── App.tsx             # Main application component
+└── main.tsx            # Entry point
+```
+
+## 📝 IRCTC Refund Rules Implemented
+
+The calculator adheres to the following general rules (subject to change by IRCTC):
+
+*   **Confirmed Tickets (48h+)**: Flat cancellation charge based on class.
+*   **Confirmed Tickets (48h-12h)**: 25% of fare (subject to min flat charge).
+*   **Confirmed Tickets (12h-4h)**: 50% of fare (subject to min flat charge).
+*   **Confirmed Tickets (<4h)**: No refund.
+*   **Waitlisted/RAC**: Flat clerkage charge (₹60).
+*   **Tatkal**: No refund for confirmed tickets; clerkage for WL/RAC.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
