@@ -33,7 +33,7 @@ const Hero = () => {
                     <div className="flex flex-wrap justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
                         <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20">
                             <Shield className="h-4 w-4 text-secondary" />
-                            <span className="text-sm text-primary-foreground/90">2024 Rules</span>
+                            <span className="text-sm text-primary-foreground/90">2026 Rules</span>
                         </div>
                         <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20">
                             <Clock className="h-4 w-4 text-secondary" />
