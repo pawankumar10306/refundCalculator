@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
-    darkMode: "class",
+    darkMode: ["class"],
     content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
     prefix: "",
     theme: {
@@ -15,7 +15,7 @@ export default {
         },
         extend: {
             fontFamily: {
-                display: ['Spline Sans', 'sans-serif'],
+                display: ['Poppins', 'sans-serif'],
                 body: ['Noto Sans', 'sans-serif'],
             },
             colors: {
@@ -52,13 +52,12 @@ export default {
                     DEFAULT: "hsl(var(--card))",
                     foreground: "hsl(var(--card-foreground))",
                 },
-                forest: {
-                    deep: "hsl(var(--forest-deep))",
-                    card: "hsl(var(--forest-card))",
-                    border: "hsl(var(--forest-border))",
-                    accent: "hsl(var(--forest-accent))",
-                    muted: "hsl(var(--forest-muted))",
-                    glow: "hsl(var(--forest-glow))",
+                irctc: {
+                    blue: "hsl(var(--irctc-blue))",
+                    "dark-blue": "hsl(var(--irctc-dark-blue))",
+                    orange: "hsl(var(--irctc-orange))",
+                    "light-orange": "hsl(var(--irctc-light-orange))",
+                    gray: "hsl(var(--irctc-gray))",
                 },
                 sidebar: {
                     DEFAULT: "hsl(var(--sidebar-background))",

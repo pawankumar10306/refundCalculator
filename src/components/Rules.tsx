@@ -8,7 +8,7 @@ import { BookOpen, IndianRupee, Clock, AlertTriangle, Train, FileText } from "lu
 
 const Rules = () => {
     return (
-        <section id="rules" className="py-10 md:py-20 bg-gradient-to-b from-transparent via-primary/5 to-transparent">
+        <section id="rules" className="py-12 md:py-16 bg-muted/30">
             <div className="container">
                 <div className="max-w-3xl mx-auto">
                     {/* Section Header */}
@@ -17,7 +17,7 @@ const Rules = () => {
                             <BookOpen className="h-4 w-4 text-primary" />
                             <span className="text-sm font-medium text-primary">Reference Guide</span>
                         </div>
-                        <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-3">
+                        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
                             IRCTC Cancellation Rules
                         </h2>
                         <p className="text-muted-foreground">
@@ -28,7 +28,7 @@ const Rules = () => {
                     {/* Accordion */}
                     <Accordion type="single" collapsible className="space-y-3">
                         {/* Base Charges */}
-                        <AccordionItem value="base-charges" className="forest-card border border-border px-6 rounded-2xl">
+                        <AccordionItem value="base-charges" className="irctc-card border border-border px-6 rounded-2xl">
                             <AccordionTrigger className="hover:no-underline py-5">
                                 <div className="flex items-center gap-3">
                                     <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
@@ -64,7 +64,7 @@ const Rules = () => {
                         </AccordionItem>
 
                         {/* Timing Based */}
-                        <AccordionItem value="timing" className="forest-card border border-border px-6 rounded-2xl">
+                        <AccordionItem value="timing" className="irctc-card border border-border px-6 rounded-2xl">
                             <AccordionTrigger className="hover:no-underline py-5">
                                 <div className="flex items-center gap-3">
                                     <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
@@ -75,19 +75,19 @@ const Rules = () => {
                             </AccordionTrigger>
                             <AccordionContent className="pb-5 text-muted-foreground">
                                 <div className="space-y-4 pl-12">
-                                    <div className="p-3 rounded-lg bg-secondary/50">
+                                    <div className="p-3 rounded-lg bg-muted/50">
                                         <p className="font-medium text-foreground mb-1">More than 48 hours</p>
                                         <p className="text-sm">Flat cancellation charge per passenger</p>
                                     </div>
-                                    <div className="p-3 rounded-lg bg-secondary/50">
+                                    <div className="p-3 rounded-lg bg-muted/50">
                                         <p className="font-medium text-foreground mb-1">48 to 12 hours</p>
                                         <p className="text-sm">25% of fare (subject to min flat charge)</p>
                                     </div>
-                                    <div className="p-3 rounded-lg bg-secondary/50">
+                                    <div className="p-3 rounded-lg bg-muted/50">
                                         <p className="font-medium text-foreground mb-1">12 to 4 hours</p>
                                         <p className="text-sm">50% of fare (subject to min flat charge)</p>
                                     </div>
-                                    <div className="p-3 rounded-lg bg-destructive/10 border border-destructive/20">
+                                    <div className="p-3 rounded-lg bg-muted/50">
                                         <p className="font-medium text-foreground mb-1">Less than 4 hours / After chart</p>
                                         <p className="text-sm">No refund for confirmed tickets</p>
                                     </div>
@@ -96,7 +96,7 @@ const Rules = () => {
                         </AccordionItem>
 
                         {/* RAC & Waitlist */}
-                        <AccordionItem value="rac-wl" className="forest-card border border-border px-6 rounded-2xl">
+                        <AccordionItem value="rac-wl" className="irctc-card border border-border px-6 rounded-2xl">
                             <AccordionTrigger className="hover:no-underline py-5">
                                 <div className="flex items-center gap-3">
                                     <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
@@ -107,15 +107,15 @@ const Rules = () => {
                             </AccordionTrigger>
                             <AccordionContent className="pb-5 text-muted-foreground">
                                 <div className="space-y-4 pl-12">
-                                    <div className="p-3 rounded-lg bg-secondary/50">
+                                    <div className="p-3 rounded-lg bg-muted/50">
                                         <p className="font-medium text-foreground mb-1">Before Chart & up to 30 min before departure</p>
                                         <p className="text-sm">Refund after clerkage deduction (~₹60 per passenger)</p>
                                     </div>
-                                    <div className="p-3 rounded-lg bg-secondary/50">
+                                    <div className="p-3 rounded-lg bg-muted/50">
                                         <p className="font-medium text-foreground mb-1">After 30 mins before departure</p>
                                         <p className="text-sm">Refund through TDR only, based on specific reason</p>
                                     </div>
-                                    <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                                    <div className="p-3 rounded-lg bg-muted/50">
                                         <p className="font-medium text-foreground mb-1">Auto Cancellation</p>
                                         <p className="text-sm">If WL not confirmed, automatic refund with ₹60 clerkage</p>
                                     </div>
@@ -124,7 +124,7 @@ const Rules = () => {
                         </AccordionItem>
 
                         {/* Tatkal */}
-                        <AccordionItem value="tatkal" className="forest-card border border-border px-6 rounded-2xl">
+                        <AccordionItem value="tatkal" className="irctc-card border border-border px-6 rounded-2xl">
                             <AccordionTrigger className="hover:no-underline py-5">
                                 <div className="flex items-center gap-3">
                                     <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
@@ -135,11 +135,11 @@ const Rules = () => {
                             </AccordionTrigger>
                             <AccordionContent className="pb-5 text-muted-foreground">
                                 <div className="space-y-4 pl-12">
-                                    <div className="p-3 rounded-lg bg-destructive/10 border border-destructive/20">
+                                    <div className="p-3 rounded-lg bg-muted/50">
                                         <p className="font-medium text-foreground mb-1">Confirmed Tatkal</p>
                                         <p className="text-sm">Absolutely NO refund under any circumstances</p>
                                     </div>
-                                    <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                                    <div className="p-3 rounded-lg bg-muted/50">
                                         <p className="font-medium text-foreground mb-1">RAC / Waitlisted Tatkal</p>
                                         <p className="text-sm">Full refund minus ₹60 clerkage per passenger</p>
                                     </div>
@@ -148,7 +148,7 @@ const Rules = () => {
                         </AccordionItem>
 
                         {/* Train Cancelled */}
-                        <AccordionItem value="train-cancelled" className="forest-card border border-border px-6 rounded-2xl">
+                        <AccordionItem value="train-cancelled" className="irctc-card border border-border px-6 rounded-2xl">
                             <AccordionTrigger className="hover:no-underline py-5">
                                 <div className="flex items-center gap-3">
                                     <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
@@ -159,19 +159,19 @@ const Rules = () => {
                             </AccordionTrigger>
                             <AccordionContent className="pb-5 text-muted-foreground">
                                 <div className="space-y-4 pl-12">
-                                    <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+                                    <div className="p-3 rounded-lg bg-muted/50">
                                         <p className="font-medium text-foreground mb-1">Train Cancelled by Railways</p>
                                         <p className="text-sm">Full refund with no deduction</p>
                                     </div>
-                                    <div className="p-3 rounded-lg bg-secondary/50">
+                                    <div className="p-3 rounded-lg bg-muted/50">
                                         <p className="font-medium text-foreground mb-1">Train Delayed &gt; 3 Hours</p>
                                         <p className="text-sm">Full refund through TDR</p>
                                     </div>
-                                    <div className="p-3 rounded-lg bg-secondary/50">
+                                    <div className="p-3 rounded-lg bg-muted/50">
                                         <p className="font-medium text-foreground mb-1">AC Not Working</p>
                                         <p className="text-sm">Difference amount refunded</p>
                                     </div>
-                                    <div className="p-3 rounded-lg bg-secondary/50">
+                                    <div className="p-3 rounded-lg bg-muted/50">
                                         <p className="font-medium text-foreground mb-1">Downgraded by Railways</p>
                                         <p className="text-sm">Fare difference refunded automatically</p>
                                     </div>

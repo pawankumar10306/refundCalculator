@@ -1,102 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Spline+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Dark Forest Theme - Train Ticket Calculator */
+/* IRCTC Theme - Blue & Orange */
 
 @layer base {
   :root {
-    --background: 155 35% 9%;
-    --foreground: 0 0% 100%;
+    --background: 210 40% 98%;
+    --foreground: 215 25% 15%;
 
-    --card: 150 30% 15%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
 
-    --popover: 150 30% 12%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 145 75% 55%;
-    --primary-foreground: 155 35% 9%;
+    --primary: 210 100% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 150 30% 20%;
-    --secondary-foreground: 145 30% 68%;
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 150 25% 18%;
-    --muted-foreground: 145 30% 68%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 145 75% 55%;
-    --accent-foreground: 155 35% 9%;
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 144 30% 30%;
-    --input: 150 30% 20%;
-    --ring: 145 75% 55%;
+    --border: 210 20% 88%;
+    --input: 210 20% 94%;
+    --ring: 210 100% 35%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens */
-    --forest-deep: 155 35% 9%;
-    --forest-card: 150 30% 15%;
-    --forest-border: 144 30% 30%;
-    --forest-accent: 145 75% 55%;
-    --forest-muted: 145 30% 68%;
-    --forest-glow: 145 75% 55%;
+    /* Custom IRCTC tokens */
+    --irctc-blue: 210 100% 35%;
+    --irctc-dark-blue: 210 100% 20%;
+    --irctc-orange: 25 95% 53%;
+    --irctc-light-orange: 25 95% 95%;
+    --irctc-gray: 215 15% 45%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(180deg, hsl(155 35% 6%) 0%, hsl(155 35% 9%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(150 30% 15%) 0%, hsl(150 30% 12%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(145 75% 55%) 0%, hsl(145 75% 45%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 25%) 0%, hsl(210 100% 40%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(25 95% 45%) 100%);
 
     /* Shadows */
-    --shadow-card: 0 4px 24px -4px hsl(155 35% 5% / 0.5);
-    --shadow-glow: 0 0 20px hsl(145 75% 55% / 0.3);
-    --shadow-button: 0 4px 16px hsl(145 75% 55% / 0.4);
+    --shadow-card: 0 4px 24px -4px hsl(210 100% 20% / 0.1);
+    --shadow-glow: 0 0 20px hsl(25 95% 53% / 0.3);
+    --shadow-button: 0 4px 16px hsl(25 95% 53% / 0.3);
 
     /* Font families */
-    --font-display: 'Spline Sans', sans-serif;
+    --font-display: 'Poppins', sans-serif;
     --font-body: 'Noto Sans', sans-serif;
 
-    --sidebar-background: 150 30% 12%;
+    --sidebar-background: 210 100% 25%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 145 75% 55%;
-    --sidebar-primary-foreground: 155 35% 9%;
-    --sidebar-accent: 150 30% 20%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 100% 30%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 144 30% 30%;
-    --sidebar-ring: 145 75% 55%;
+    --sidebar-border: 210 100% 40%;
+    --sidebar-ring: 25 95% 53%;
   }
 
   .dark {
-    --background: 155 35% 9%;
+    --background: 215 30% 12%;
     --foreground: 0 0% 100%;
-    --card: 150 30% 15%;
+    --card: 215 30% 16%;
     --card-foreground: 0 0% 100%;
-    --popover: 150 30% 12%;
+    --popover: 215 30% 14%;
     --popover-foreground: 0 0% 100%;
-    --primary: 145 75% 55%;
-    --primary-foreground: 155 35% 9%;
-    --secondary: 150 30% 20%;
-    --secondary-foreground: 145 30% 68%;
-    --muted: 150 25% 18%;
-    --muted-foreground: 145 30% 68%;
-    --accent: 145 75% 55%;
-    --accent-foreground: 155 35% 9%;
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 215 25% 22%;
+    --muted-foreground: 210 15% 70%;
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 144 30% 30%;
-    --input: 150 30% 20%;
-    --ring: 145 75% 55%;
-    --sidebar-background: 150 30% 12%;
+    --border: 215 25% 28%;
+    --input: 215 25% 22%;
+    --ring: 210 100% 50%;
+    --sidebar-background: 215 30% 14%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 145 75% 55%;
-    --sidebar-primary-foreground: 155 35% 9%;
-    --sidebar-accent: 150 30% 20%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 30% 20%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 144 30% 30%;
-    --sidebar-ring: 145 75% 55%;
+    --sidebar-border: 215 25% 28%;
+    --sidebar-ring: 25 95% 53%;
   }
 }
 
@@ -120,27 +119,35 @@
 }
 
 @layer components {
-  .forest-card {
+  .irctc-card {
     @apply bg-card border border-border rounded-2xl;
     box-shadow: var(--shadow-card);
   }
 
-  .forest-input {
+  .irctc-input {
     @apply bg-input border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200;
   }
 
-  .forest-button {
-    @apply bg-primary text-primary-foreground font-semibold rounded-full px-6 py-3 transition-all duration-300 hover:scale-105;
+  .irctc-button {
+    @apply bg-secondary text-secondary-foreground font-semibold rounded-lg px-6 py-3 transition-all duration-300 hover:scale-105;
     box-shadow: var(--shadow-button);
   }
 
-  .forest-button:hover {
+  .irctc-button:hover {
     box-shadow: var(--shadow-glow);
+  }
+
+  .irctc-button-primary {
+    @apply bg-primary text-primary-foreground font-semibold rounded-lg px-6 py-3 transition-all duration-300 hover:opacity-90;
   }
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-accent);
+  }
+
+  .hero-gradient {
+    background: var(--gradient-hero);
   }
 }
 
@@ -159,8 +166,8 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(145 75% 55% / 0.3); }
-    50% { box-shadow: 0 0 40px hsl(145 75% 55% / 0.5); }
+    0%, 100% { box-shadow: 0 0 20px hsl(25 95% 53% / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(25 95% 53% / 0.5); }
   }
 
   .animate-fade-in {

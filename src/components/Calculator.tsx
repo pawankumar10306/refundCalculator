@@ -131,11 +131,11 @@ const Calculator = () => {
     const isFormValid = trainClass && bookingStatus && timing;
 
     return (
-        <section id="calculator" className="py-10 md:py-20">
+        <section id="calculator" className="py-10 md:py-16">
             <div className="container">
                 <div className="max-w-xl mx-auto">
                     {/* Calculator Card */}
-                    <div className="forest-card p-6 md:p-8">
+                    <div className="irctc-card p-6 md:p-8">
                         {/* Card Header */}
                         <div className="flex items-center gap-3 mb-8">
                             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 border border-primary/20">
@@ -157,7 +157,7 @@ const Calculator = () => {
                             <div className="space-y-2">
                                 <Label className="text-sm font-medium text-foreground">Train Class</Label>
                                 <Select value={trainClass} onValueChange={setTrainClass}>
-                                    <SelectTrigger className="forest-input w-full">
+                                    <SelectTrigger className="irctc-input w-full">
                                         <SelectValue placeholder="Select class" />
                                     </SelectTrigger>
                                     <SelectContent className="bg-popover border-border">
@@ -174,7 +174,7 @@ const Calculator = () => {
                             <div className="space-y-2">
                                 <Label className="text-sm font-medium text-foreground">Booking Status</Label>
                                 <Select value={bookingStatus} onValueChange={setBookingStatus}>
-                                    <SelectTrigger className="forest-input w-full">
+                                    <SelectTrigger className="irctc-input w-full">
                                         <SelectValue placeholder="Select status" />
                                     </SelectTrigger>
                                     <SelectContent className="bg-popover border-border">
@@ -189,7 +189,7 @@ const Calculator = () => {
                             <div className="space-y-2">
                                 <Label className="text-sm font-medium text-foreground">Cancellation Timing</Label>
                                 <Select value={timing} onValueChange={setTiming}>
-                                    <SelectTrigger className="forest-input w-full">
+                                    <SelectTrigger className="irctc-input w-full">
                                         <SelectValue placeholder="Select timing" />
                                     </SelectTrigger>
                                     <SelectContent className="bg-popover border-border">
@@ -214,14 +214,14 @@ const Calculator = () => {
                                         placeholder="Enter fare amount"
                                         value={ticketCost}
                                         onChange={(e) => setTicketCost(e.target.value)}
-                                        className="forest-input pl-10"
+                                        className="irctc-input pl-10"
                                     />
                                 </div>
                             </div>
 
                             {/* Toggle Switches */}
                             <div className="space-y-4 pt-2">
-                                <div className="flex items-center justify-between p-4 rounded-xl bg-secondary/50 border border-border">
+                                <div className="flex items-center justify-between p-4 rounded-xl bg-muted/50 border border-border">
                                     <div className="flex items-center gap-3">
                                         <Label htmlFor="tatkal" className="text-sm font-medium text-foreground cursor-pointer">
                                             Tatkal Ticket
@@ -234,7 +234,7 @@ const Calculator = () => {
                                     />
                                 </div>
 
-                                <div className="flex items-center justify-between p-4 rounded-xl bg-secondary/50 border border-border">
+                                <div className="flex items-center justify-between p-4 rounded-xl bg-muted/50 border border-border">
                                     <div className="flex items-center gap-3">
                                         <Label htmlFor="train-cancelled" className="text-sm font-medium text-foreground cursor-pointer">
                                             Train Cancelled by Railways
@@ -252,7 +252,7 @@ const Calculator = () => {
                             <Button
                                 onClick={calculateRefund}
                                 disabled={!isFormValid}
-                                className="forest-button w-full mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="irctc-button w-full mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 Calculate Refund
                             </Button>
@@ -260,22 +260,22 @@ const Calculator = () => {
 
                         {/* Result */}
                         {result && (
-                            <div className="mt-8 p-6 rounded-2xl bg-primary/10 border border-primary/30 animate-fade-in">
+                            <div className="mt-8 p-6 rounded-2xl bg-secondary/10 border border-secondary/30 animate-fade-in">
                                 <div className="grid grid-cols-2 gap-4 mb-4">
-                                    <div className="text-center p-4 rounded-xl bg-background/50">
+                                    <div className="text-center p-4 rounded-xl bg-card border border-border">
                                         <p className="text-sm text-muted-foreground mb-1">Cancellation Charge</p>
                                         <p className="font-display text-2xl font-bold text-foreground">
                                             {typeof result.cancellationCharge === "number" ? `₹${result.cancellationCharge}` : result.cancellationCharge}
                                         </p>
                                     </div>
-                                    <div className="text-center p-4 rounded-xl bg-primary/20">
+                                    <div className="text-center p-4 rounded-xl bg-secondary/20 border border-secondary/30">
                                         <p className="text-sm text-muted-foreground mb-1">Refund Amount</p>
-                                        <p className="font-display text-2xl font-bold text-primary">
+                                        <p className="font-display text-2xl font-bold text-secondary">
                                             {typeof result.refundAmount === "number" ? `₹${result.refundAmount}` : result.refundAmount}
                                         </p>
                                     </div>
                                 </div>
-                                <div className="flex items-start gap-2 p-3 rounded-lg bg-background/30">
+                                <div className="flex items-start gap-2 p-3 rounded-lg bg-muted/30">
                                     <AlertCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                                     <p className="text-sm text-muted-foreground">{result.explanation}</p>
                                 </div>
