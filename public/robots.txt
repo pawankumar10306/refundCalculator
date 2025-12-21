@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://trainrefund.vercel.app/sitemap.xml
+Sitemap: https://trainrefundcalculator.in/sitemap.xml
